@@ -6,11 +6,32 @@ Library           RequestsLibrary
 Library           OperatingSystem
  
 *** Test Cases ***
-Get Request with Url Parameters
-    [Tags]    get
-    Create Session    httpbin    http://httpbin.org
-    ${params}=    Create Dictionary    key    value    key2    value2
-    ${resp}=    Get Request    httpbin    /get    params=${params}
-    Should Be Equal As Strings    ${resp.status_code}    200
-    ${jsondata}=    To Json    ${resp.content}
-    Should be Equal    ${jsondata['args']}    ${params}
+Get Request gnb force
+    [Tags]	get
+    Create Session	assist	http://assist-api-qa.wemakeprice.com/gnb/forceUpdateGnbCacheData
+    ${resp}=	Get Request	assist	/
+    Should Be Equal As Strings	${resp.status_code}	200
+
+Get Request gnb pc
+    [Tags]      get
+    Create Session      assist  http://assist-api-qa.wemakeprice.com/gnb/pc
+    ${resp}=    Get Request     assist  /
+    Should Be Equal As Strings  ${resp.status_code}     200
+
+Get Request app
+    [Tags]      get
+    Create Session      assist  http://assist-api-qa.wemakeprice.com/app/getAppExamination
+    ${resp}=    Get Request     assist  /
+    Should Be Equal As Strings  ${resp.status_code}     200
+
+Get Request common lite
+    [Tags]      get
+    Create Session      assist  http://assist-api-qa.wemakeprice.com/common/lite
+    ${resp}=    Get Request     assist  /
+    Should Be Equal As Strings  ${resp.status_code}     200
+
+Get Request common unite
+    [Tags]      get
+    Create Session      assist  http://assist-api-qa.wemakeprice.com/common/unite
+    ${resp}=    Get Request     assist  /
+    Should Be Equal As Strings  ${resp.status_code}     200
