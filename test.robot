@@ -28,13 +28,13 @@ Get Request common lite
     [Tags]      get
     Create Session      assist  http://assist-api-stg.wemakeprice.com/common/lite
     ${resp}=    Get Request     assist  /
-    Should Be Equal As Strings  ${resp.status_code}     200
+    Should Be Equal As Strings  ${resp.status_code}     500
 
 Get Request common unite
     [Tags]      get
     Create Session      assist  http://assist-api-stg.wemakeprice.com/common/unite
     ${resp}=    Get Request     assist  /
-    Should Be Equal As Strings  ${resp.status_code}     200
+    Should Be Equal As Strings  ${resp.status_code}     500
 
 Get Request app setA
     [Tags]      get
