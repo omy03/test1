@@ -41,3 +41,15 @@ Get Request app setA
     Create Session      app  http://app-api-stg.wemakeprice.com/config/v2/cache/setAssociateAppVersion
     ${resp}=    Get Request     app  /
     Should Be Equal As Strings  ${resp.status_code}     200
+
+Get Request app gnb
+    [Tags]      get
+    Create Session      app  http://app-api-stg.wemakeprice.com/gnb/cache/versionList
+    ${resp}=    Get Request     app  /
+    Should Be Equal As Strings  ${resp.status_code}     200
+
+Get Request app gnb
+    [Tags]      get
+    Create Session      app  http://app-api-stg.wemakeprice.com/gnb/cache/versionList
+    ${resp}=    Get Request     app  /
+    Should Be Equal As Strings  ${resp.status_code}     200
